@@ -20,10 +20,16 @@ jobs:
           dotnet-version: ${{ env.NETCORE_VERSION }}
 
       - name: Restore
-        run: dotnet restore
+        run: |
+          cd core-web-app
+          dotnet restore
 
       - name: Build
-        run: dotnet build --no-restore
+        run: |
+          cd core-web-app        
+          dotnet build --no-restore
 
       - name: Publish
-        run: dotnet publish --no-build -c Release -o "./published"
+        run: |
+          cd core-web-app
+          dotnet publish --no-build -c Release -o "./published"
