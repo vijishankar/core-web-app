@@ -1,0 +1,29 @@
+name: "Build and Deploy"
+
+on: [push, workflow_dispatch]
+
+env:
+  AZURE_WEBAPP_NAME: aspnet-core-web-app
+  AURE_WEBAPP_PACKAGE_NAME: "./published"
+  NETCORE_VERSION: "3.1.101"
+
+jobs:
+  build:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v2
+
+      - name: Set up dotnet Core $ {{ env.NETCORE_VERSION }}
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: $ {{ env.NETCORE_VERSION }}
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore
+
+      - name: Publish
+        run: dotnet publish --no-build -c Release -o "./published"
