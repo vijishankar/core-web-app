@@ -3,7 +3,7 @@ name: "Build and Deploy"
 on: [push, workflow_dispatch]
 
 env:
-  AZURE_WEBAPP_NAME: rg-github-deploy
+  AZURE_WEBAPP_NAME: wa-github-deploy
   AZURE_WEBAPP_PACKAGE_NAME: "./published"
   NETCORE_VERSION: "3.1.101"
 
