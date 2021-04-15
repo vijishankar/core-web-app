@@ -15,6 +15,6 @@ jobs:
         - name: Azure Pipelines Action
           uses: Azure/pipelines@v1
           with:
-            azure-devops-project-url: https://dev.azure.com/DevopsCPTTraining/EngageDemo
+            azure-devops-project-url: 'https://dev.azure.com/DevopsCPTTraining/EngageDemo'
             azure-pipeline-name: 'Tags-CD'
             azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
