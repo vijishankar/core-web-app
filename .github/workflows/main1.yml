@@ -14,7 +14,7 @@ jobs:
       - name: Run delete-old-branches-action
         uses: beatlabs/delete-old-branches-action@v0.0.9
         with:
-          repo_token: ${{ github.token }}
+          repo_token: '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'
           date: '3 months ago'
           dry_run: true
           delete_tags: true
