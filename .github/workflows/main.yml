@@ -16,7 +16,7 @@ jobs:
         with:
           github_token: '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'
           last_commit_age_days: 100
-          ignore_branches: next-version,dont-deleteme
+          ignore_branches: master
           github_base_url: https://github.mycompany.com/api/v3
 
           # Disable dry run and actually get stuff deleted
