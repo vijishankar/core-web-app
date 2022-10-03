@@ -1,26 +1,12 @@
 name: Delete abandoned branches
 
-on:
-  push:
-    branches:
-      - master
-
+on: [push]
 jobs:
-  cleanup_old_branches:
+  cleanup-old-branches:
     runs-on: ubuntu-latest
-    name: Satisfy my repo CDO
     steps:
-      - name: Delete those pesky dead branches
-        uses: phpdocker-io/github-actions-delete-abandoned-branches@v1
-        id: delete_stuff
+      - uses: cultureamp/delete-old-branches-action@v0.3
         with:
-          github_token: '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'
-          last_commit_age_days: 100
-          ignore_branches: master
-          github_base_url: https://github.mycompany.com/api/v3
-
-          # Disable dry run and actually get stuff deleted
-          dry_run: no
-
-      - name: Get output
-        run: "echo 'Deleted branches: ${{ steps.delete_stuff.outputs.deleted_branches }}'"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          min-num-branches: 20
+          days-to-keep-branches: 14
