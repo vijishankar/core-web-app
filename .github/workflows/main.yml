@@ -2,14 +2,12 @@ name: Removal of Old branches
 
 on: [push]
 jobs:
-  removal-of-old-branches:
-    runs-on: ubuntu-latest
+  run_tests:
+    runs-on: ubuntu-20.04
     steps:
-
-      - name: Run build script
-        run: pwd
-        shell: bash
-     
-      - name: Run build script
-        run: .github/scripts/build.sh
-        shell: bash
+    - uses: actions/checkout@v2
+    - name: Run script file
+      run: |
+         chmod +x ./.github/scripts/test.sh
+         ./.github/scripts/test.sh
+      shell: bash
