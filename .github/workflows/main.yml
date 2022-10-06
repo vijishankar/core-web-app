@@ -1,12 +1,10 @@
-name: Delete abandoned branches
+name: Removal of Old branches
 
 on: [push]
 jobs:
-  cleanup-old-branches:
+  removal-of-old-branches:
     runs-on: ubuntu-latest
     steps:
-      - uses: cultureamp/delete-old-branches-action@v0.3
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          min-num-branches: 20
-          days-to-keep-branches: 14
+      - name: Run build script
+        run: ./.github/scripts/build.sh
+        shell: bash
