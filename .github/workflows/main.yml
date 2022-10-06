@@ -8,6 +8,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run script file
       run: |
-         chmod +x ./.github/scripts/test.sh
-         ./.github/scripts/test.sh
+         chmod +x ./.github/scripts/build.sh
+         ./.github/scripts/build.sh
       shell: bash
