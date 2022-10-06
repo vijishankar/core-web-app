@@ -6,5 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run build script
-        run: ./home/runner/work/core-web-app/.github/scripts/build.sh
+        run: cd /home/runner/work/core-web-app/core-web-app/
+        shell: bash
+
+      - name: Run build script
+        run: pwd
+        shell: bash
+     
+      - name: Run build script
+        run: ./.github/scripts/build.sh
         shell: bash
