@@ -5,14 +5,11 @@ jobs:
   removal-of-old-branches:
     runs-on: ubuntu-latest
     steps:
-      - name: Run build script
-        run: cd /home/runner/work/core-web-app/core-web-app/
-        shell: bash
 
       - name: Run build script
         run: pwd
         shell: bash
      
       - name: Run build script
-        run: ./.github/scripts/build.sh
+        run: .github/scripts/build.sh
         shell: bash
